@@ -1,0 +1,58 @@
+/* ===== GENERAL PAGE STYLING ===== */
+html, body {
+  background-color: rgb(220, 231, 233);
+  font-family: 'Roboto', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #222;
+  margin-top: 30px;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: #333;
+  margin-top: 40px;
+}
+
+/* ===== PARAGRAPHS ===== */
+p {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ===== IMAGE STYLING ===== */
+img {
+  display: block;
+  width: 100%;       /* fill the page width */
+  height: auto;      /* keep aspect ratio */
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== SIDE-BY-SIDE IMAGE LAYOUT ===== */
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;          /* ensures responsiveness */
+  gap: 10px;                /* space between images */
+}
+
+.side-by-side img {
+  width: 48%;               /* two images side by side */
+}
+
+/* ===== OPTIONAL ALIGNMENT CLASSES ===== */
+#l-align { text-align: left; }
+#c-align { text-align: center; }
+#r-align { text-align: right; }
