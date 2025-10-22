@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 400,
+  "description": "Global plastics production over time (1950–1963).",
+  "data": {
+    "url": " global-plastics-production.csv"},
+  "mark": {
+    "type": "line",
+    "color": "steelblue",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+        "field": "Year",
+        "type": "temporal",
+        "title": "Year"
+    },
+    "y": {
+      "field": "Global plastics production (million tonnes)",
+      "type": "quantitative",
+      "title": "Global Plastics Production (million tonnes)"
+    },
+    "tooltip": [
+      {
+        "field": "Year",
+        "type": "temporal",
+        "title": "Year",
+        "timeUnit": "year"
+      },
+      {
+        "field": "Global plastics production (million tonnes)",
+        "type": "quantitative",
+        "title": "Production (million tonnes)",
+        "format": ","
+      }
+    ]
+        
+
+    
+  }
+}
+
+
+

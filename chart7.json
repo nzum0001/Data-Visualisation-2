@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Slope chart showing changes in the share of waste recycled over time by region.",
+  "data": {
+    "url": "share-plastic-waste-recycled.csv"
+  },
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 60
+    }
+  },
+  "width": "container",
+  "height": 400,
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {
+        "labelAngle": 0,
+        "title": "Year"
+      }
+    },
+    "y": {
+      "field": "Share of waste recycled from total regional waste",
+      "type": "quantitative",
+      "axis": {
+        "title": "Share of Waste Recycled (%)"
+      }
+    },
+    "color": {
+      "field": "Entity",
+      "type": "nominal",
+      "title": "Region",
+      "scale": {
+        "range": ["#E69AC7", "#B3D9EB", "#FFBF66", "#8EBEEB", "#E68A66", "#4D4D4D", "#CCCCCC", "#B26666", "#66A3CC", "#FFF799"]  
+      }
+    },
+    "tooltip": [
+      {"field": "Entity", "type": "nominal", "title": "Region"},
+      {"field": "Year", "type": "ordinal", "title": "Year"},
+      {
+        "field": "Share of waste recycled from total regional waste",
+        "type": "quantitative",
+        "title": "Recycled Share (%)",
+        "format": ".2f"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    },
+    "legend": {
+      "titleFontSize": 13,
+      "labelFontSize": 12
+    }
+  }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Vega-Lite Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="vega_lite_vis.js"></script>
+
+    <title>The Plastic Planet</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>The Plastic Planet</h1>
+    <p><b>Plastic</b> has become both essential and destructive.Its rising production<br>and poor waste management are leaving a lasting mark on <br>the <b>planet.</b><br>
+    </p>
+
+
+
+    <h2>The Plastic Production</h2>
+    <h3>Per Capita Plastic Waste</h3>
+    <p>Plastic waste production per person shows stark global differences.<br><span style="color: #a63603; font-weight: bold;">Wealthier  nations</span>
+       often produce more plastic waste per capita, reflecting  <br>
+       higher consumption levels. Yet, <span style="color: #fdbe85; font-weight: bold;">poorer regions</span> face the harshest impacts <br>
+       of this global pollution problem.</p>
+    <div id="choropleth_map" class="vega-embed"></div>
+
+    <h3>Global Plastics Production over the Years</h3>
+    <p>Global plastic production has grown from around <span style="color:#0072B2; font-weight:bold;">2 million tonnes</span><br>
+       in 1950 to more than <span style="color:#0072B2; font-weight:bold;">500 million tonnes</span> in 2020.This steady rise<br>
+       reflects how deeply plastics have become part of modern life, while<br>
+       also pointing to the environmental pressures they continue to create.<br>
+    </p>
+    <div id="line_chart_1" class="vega-embed"></div>
+
+
+
+
+
+    <h2>Where Does It All Go?</h2>
+    <h3>Disposal of Plastic Waste</h3>
+    <p>Over the past decades, most plastic waste has ended up in <span style="color:#F4A261; font-weight:bold;">landfills</span>,<br>
+       while only a tiny portion has been <span style="color:#F6C667; font-weight:bold;">recycled</span>. This stark difference<br>
+       highlights how production has far outpaced sustainable waste<br>
+       management, leaving recycling efforts struggling to make a<br>
+       significant impact on the planet's <b>plastic burden.</b><br>
+       </p>
+    <div id="stacked_chart" class="vega-embed"></div>
+
+
+
+    <h2>MISMANAGEMENT & OCEAN POLLUTION</h2>
+    <h3>Mismanaged Plastic Waste per Capita</h3>
+    <p>Mismanaged plastic waste per capita varies <b>widely</b> across countries,<br>
+       revealing <b>significant disparities</b> in waste management infrastructure<br>
+       and practices.Some nations generate <span style="color:#20B2AA; font-weight:bold;">high</span> amounts per person due to <br>
+       consumption patterns, while others, despite <span style="color:#87CEEB; font-weight:bold;">lower</span> production,struggle<br>
+       to manage waste effectively, contributing disproportionately to <br>
+       environmental pollution.<br>
+    
+    </p>
+    <div id="scatter_plot" class="vega-embed"></div>
+
+    <h3>Accumulated Ocean Macroplastics</h3>
+    <p>Since <b>1950</b>, the accumulation of <b>ocean macroplastics</b> has increased<br>
+        significantly, starting at approximately <span style="color:#0072B2; font-weight:bold;">400 million tonnes.</span> Over the<br>
+        following decades, plastic waste entered the oceans at an accelerating<br>
+        rate. By <b>2024</b>, the total accumulated macroplastics reached around<br>
+        <span style="color:#0072B2; font-weight:bold;">1,403,900 million tonnes</span>,illustrating a <b>continuous and rapid upward trend.</b><br>
+        This trend highlights the growing impact of human-produced plastic<br>
+        on marine environments.</p>
+    <div id="line_chart_2" class="vega-embed"></div>
+
+
+
+
+
+    <h2>IMPACTS</h2>
+    <h3>Greenhouse Gas Emissions from Plastics</h3>
+    <p>Plastics are a major source of greenhouse gas emissions, with <span style="color:#C98F8F; font-weight:bold;">carbon<br> dioxide</span>
+       making up the <b>largest</b> share. Every stage, from production to <br>
+       disposal, releases far more <span style="color:#C98F8F; font-weight:bold;">carbon dioxide</span> than other gases. This<br>
+       underscores the urgent need for better waste management and <br> sustainable alternatives.
+    </p>
+    <div id="pie_chart" class="vega-embed"></div>
+
+    <h3>Rivers that Contribute the Most to Ocean Plastic Pollution</h3>
+    <p>Rivers play a <b>major</b> role in transporting plastic waste to the oceans,<br>
+        with the<span style="color:#C98F8F; font-weight:bold;"> Pasig River </span>in the Philippines contributing the highest at 6.4%<br>
+        of global riverine plastic emissions.Most of this plastic comes<br>
+        from mismanaged local waste, highlighting the need for improved<br>
+        <b>waste management</b> and river cleanup.<br>
+    </p>
+    <div id="bar_chart" class="vega-embed"></div>
+
+
+
+    <h2>Hope in Action</h2>
+    <h3>Share of Plastic Waste that is Recycled</h3>
+    <p>Global recycling rates for plastic waste are gradually <b>increasing</b>,<br>
+       indicating a positive shift in waste management practices. Despite<br>
+       the overall proportion of recycled plastic remaining low, the <b>upward</b><br>
+       <b>trend</b> reflects growing implementation of recycling infrastructure, <br>
+       policy interventions, and public awareness, suggesting potential for<br>
+       measurable reductions in plastic-related environmental impacts over<br> 
+       time.
+    </p>
+    <div id="lolli_pop_chart" class="vega-embed"></div>
+</body>
+</html>

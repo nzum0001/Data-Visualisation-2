@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Donut chart showing percentage share of greenhouse gas emissions from plastics.",
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "greenhouse-gas-emissions-from-plastics.csv"
+  },
+  "transform": [
+    {
+      "fold": ["Nitrous oxide", "Methane", "Carbon dioxide"],
+      "as": ["Gas Type", "Emissions"]
+    },
+    {
+      "joinaggregate": [{
+        "op": "sum",
+        "field": "Emissions",
+        "as": "TotalEmissions"
+      }]
+    },
+    {
+      "calculate": "datum.Emissions / datum.TotalEmissions",
+      "as": "Percentage"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 100,
+        "outerRadius": 180,
+        "tooltip": true
+      },
+      "encoding": {
+        "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
+        "color": {
+          "field": "Gas Type",
+          "type": "nominal",
+          "title": "Gas Type",
+          "scale": {
+            "domain": ["Nitrous oxide", "Methane", "Carbon dioxide"],
+            "range": ["#F6C667", "#A8D8F0", "#C98F8F"]
+          }
+        },
+        "tooltip": [
+          {"field": "Gas Type", "type": "nominal"},
+          {"field": "Emissions", "type": "quantitative", "format": ","},
+          {"field": "Percentage", "type": "quantitative", "format": ".1%"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "top",
+        "font": "Roboto",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "dy": 200,
+        "limit": 400
+      }
+    }
+  ],
+  "view": {"stroke": null}
+}

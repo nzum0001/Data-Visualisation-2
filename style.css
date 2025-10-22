@@ -1,0 +1,84 @@
+/* ===== GENERAL PAGE STYLING ===== */
+html, body {
+  background-color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #222;
+  
+  margin-top: 30px;
+  font-size: 71px;
+  
+}
+
+h2 {
+  font-family:  Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #333;
+  margin-top: 45px;
+}
+
+h3{
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #333;
+
+}
+
+/* ===== PARAGRAPHS ===== */
+p {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #333;
+}
+
+/* ===== IMAGE STYLING ===== */
+img {
+  display: block;
+  width: 100%;       /* fill the page width */
+  height: auto;      /* keep aspect ratio */
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== SIDE-BY-SIDE IMAGE LAYOUT ===== */
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;          /* ensures responsiveness */
+  gap: 10px;                /* space between images */
+}
+
+.side-by-side img {
+  width: 48%;               /* two images side by side */
+}
+
+/* ===== OPTIONAL ALIGNMENT CLASSES ===== */
+#l-align { text-align: left; }
+#c-align { text-align: center; }
+#r-align { text-align: right; }
+
+
+/* ===== VEGA-LITE CHART STYLING ===== */
+.vega-embed {
+  width: 100%;              /* same width as images */
+  height: auto;             /* maintain aspect ratio */
+  margin: 20px 0;           /* same spacing as images */
+  border-radius: 8px;       /* match image corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* same soft shadow */
+}
+/* ===== ENSURE CHART HEIGHT MATCHES IMAGES ===== */
+.vega-embed > canvas {
+  max-height: 400px;        /* make chart visually balanced */
+}

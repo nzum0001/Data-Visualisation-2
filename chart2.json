@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+    "description": "Global plastic waste management fate over time (stacked area chart).",
+    "width": "container",
+    "height": 400,
+    "data": {
+        "url": "plastic-fate.csv"},
+    "transform": [
+        {
+            "fold": [
+                "Landfilled",
+                "Littered and mismanaged",
+                "Incinerated",
+                "Recycled"
+            ],
+            "as": ["Category", "Tonnes"]
+        }
+    ],
+    "mark": {
+        "type": "area",
+        "interpolate": "monotone"
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "quantitative",   
+            "title": "Year",
+            "axis": {"format": "d"}   
+        },
+        "y": {
+            "aggregate": "sum",
+            "field": "Tonnes",
+            "type": "quantitative",
+            "title": "Plastic Waste (million tonnes)"
+        },
+        "color": {
+            "field": "Category",
+            "type": "nominal",
+            "title": "Fate of Plastic Waste",
+            "scale": {
+                "domain":[
+                    "Landfilled",
+                    "Littered and mismanaged",
+                    "Incinerated",
+                    "Recycled"
+                ],
+                "range": ["#F4A261", "#A8D8F0", "#7FB3D5","#F6C667" ]
+            }  
+        },
+        "tooltip": [
+            {"field": "Year", "type": "quantitative", "title": "Year"},
+            {"field": "Category", "type": "nominal"},
+            {
+                "field": "Tonnes",
+                "type": "quantitative",
+                "title": "Amount (million tonnes)",
+                "format": ","
+      }
+    ]
+
+    }}

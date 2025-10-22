@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Bar chart showing the share of global plastics emitted to the ocean by top rivers (color-blind friendly).",
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "plastics-top-rivers.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Entity",
+      "type": "nominal",
+      "axis": {"labelAngle": -15, "title": "River"},
+      "sort": "-y"
+    },
+    "y": {
+      "field": "Share of global plastics emitted to ocean",
+      "type": "quantitative",
+      "title": "Share of Global Plastics Emitted (%)"
+    },
+    "color": {
+      "field": "Entity",
+      "type": "nominal",
+      "scale": {
+        "range": ["#E5ACC9", "#C5DDF0", "#F6C667", "#A8D8F0", "#F4A261", "#666666", "#CCCCCC", "#C98F8F", "#7FB3D5", "#F7F3A4"]
+      }
+    },
+    "tooltip": [
+      {"field": "Entity", "type": "nominal"},
+      {"field": "Share of global plastics emitted to ocean", "type": "quantitative", "format": ".2f"}
+    ]
+  },
+  "view": {"stroke": null}
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Accumulated ocean macroplastics over time.",
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "macroplastics-in-ocean.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum['Accumulated ocean plastic: Macroplastics (>0.5cm)'])",
+      "as": "Macroplastics"
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "color": "blue",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "title": "Year"
+    },
+    "y": {
+      "field": "Macroplastics",
+      "type": "quantitative",
+      "title": "Accumulated Ocean Macroplastics ( million tonnes)"
+    },
+    "tooltip": [
+      {"field": "Year", "type": "temporal","title": "Year","timeUnit":"year"},
+      {"field": "Macroplastics", "type": "quantitative","title": "Macro Plactics (million tonnes)", "format": ","}
+    ]
+  }
+}

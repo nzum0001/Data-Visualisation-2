@@ -1,0 +1,79 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Scatter plot showing relationship between GDP per capita and mismanaged plastic waste per capita by world region, with filtering option.",
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "mismachted_waste.csv"
+  },
+  "params": [
+    {
+      "name": "region_selection",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
+          "Africa",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "name": "Select Continent: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "region_selection == 'All' || datum['World regions according to OWID'] == region_selection"
+    }
+  ],
+  "mark": {
+    "type": "circle",
+    "filled": true,
+    "size": 80
+  },
+  "encoding": {
+    "x": {
+      "field": "GDP per capita, PPP (constant 2021 international $)",
+      "type": "quantitative",
+      "title": "GDP per capita (PPP, 2021 International $)",
+      "scale": {"zero": false}
+    },
+    "y": {
+      "field": "Mismanaged plastic waste per capita (kg per year)",
+      "type": "quantitative",
+      "title": "Mismanaged Plastic Waste per Capita (kg/year)",
+      "scale": {"zero": false}
+    },
+    "color": {
+      "field": "World regions according to OWID",
+      "type": "nominal",
+      "title": "World Region",
+      "scale": {
+        "domain": [
+          "Africa",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "scheme": "tableau10"
+      }
+    },
+    "tooltip": [
+      {"field": "Entity", "type": "nominal", "title": "Country"},
+      {"field": "GDP per capita, PPP (constant 2021 international $)", "type": "quantitative", "title": "GDP per capita"},
+      {"field": "Mismanaged plastic waste per capita (kg per year)", "type": "quantitative", "title": "Mismanaged waste (kg/year)"},
+      {"field": "World regions according to OWID", "type": "nominal", "title": "Region"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"labelFont": "Roboto", "titleFont": "Roboto"},
+    "legend": {"titleFont": "Roboto", "labelFont": "Roboto"}
+  }
+}
